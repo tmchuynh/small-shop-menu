@@ -54,16 +54,18 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavBar() {
   return (
-    <NavigationMenu className="flex justify-center mx-auto w-full">
+    <NavigationMenu className="top-0 z-10 sticky flex justify-center bg-background/85 mx-auto py-6 min-w-screen">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-transparent">
+            Getting started
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="gap-3 grid lg:grid-cols-[.75fr_1fr] p-4 md:w-[400px] lg:w-[500px]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="flex flex-col justify-end bg-gradient-to-b from-muted/50 to-muted focus:shadow-md p-6 rounded-md w-full h-full no-underline select-none outline-none"
+                    className="flex flex-col justify-end focus:shadow-md p-6 rounded-md w-full h-full no-underline select-none outline-none"
                     href="/"
                   >
                     <div className="mt-4 mb-2 font-medium text-lg">
@@ -105,7 +107,7 @@ export function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/docs" passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
             </NavigationMenuLink>
@@ -121,18 +123,17 @@ const ListItem = React.forwardRef<
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
   return (
-    <li>
+    <li className={cn("mx-0", className)}>
       <NavigationMenuLink asChild>
         <a
           ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
+          className="group flex flex-col data-[state=open]:bg-accent hover:bg-primary/85 p-4 rounded-md focus-visible:ring-[3px] focus-visible:ring-ring/50 h-full data-[state=open]:text-accent-foreground hover:text-primary-foreground no-underline transition-colors select-none outline-none focus-visible:outline-none"
           {...props}
         >
-          <div className="font-medium text-sm leading-none">{title}</div>
-          <p className="text-muted-foreground text-sm leading-snug line-clamp-2">
+          <div className="font-[PlayfairDisplay] font-medium text-lg leading-none">
+            {title}
+          </div>
+          <p className="font-[MavenPro] font-normal text-lg group-hover:text-white leading-snug">
             {children}
           </p>
         </a>
