@@ -1,7 +1,22 @@
 import type { NextConfig } from "next";
 
+const imageHosts = [
+  "images.unsplash.com",
+  "tailwindcss.com",
+  "plus.unsplash.com",
+  "img.freepik.com",
+];
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: imageHosts.map((hostname) => ({
+      protocol: "https",
+      hostname,
+      port: "",
+      pathname: "/**",
+    })),
+    dangerouslyAllowSVG: true,
+  },
 };
 
 export default nextConfig;

@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <main>
+        <main className="relative">
           <NavBar />
           {children}
         </main>
