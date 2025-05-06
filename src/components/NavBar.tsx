@@ -4,24 +4,23 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaBars, FaChevronDown } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 export default function NavBar() {
   const pathname = usePathname();
 
   const navigation = [
-    { name: "Dashboard", href: "/dashboard" },
-    { name: "Team", href: "/team" },
-    { name: "Projects", href: "/projects" },
-    { name: "Calendar", href: "/calendar" },
+    { name: "Home", href: "/" },
+    { name: "Menu", href: "/menu" },
+    { name: "Reservations", href: "/reservations" },
+    { name: "Private Events", href: "/reservations/private-dining" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact Us", href: "/contact-us" },
   ];
 
   const isActive = (path: string) => {
@@ -33,7 +32,7 @@ export default function NavBar() {
       as="nav"
       className="bg-background shadow-sm font-[AlegreyaSansSC]"
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="mx-auto w-11/12">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex items-center shrink-0">
@@ -59,59 +58,6 @@ export default function NavBar() {
                   {item.name}
                 </a>
               ))}
-              <Menu as="a" className="inline-block relative text-left">
-                <div>
-                  <MenuButton className="inline-flex items-center gap-2 px-1 pt-1 hover:border-gray-300 border-transparent border-b-2 font-medium text-gray-500 text-sm hover:text-gray-700">
-                    Options
-                    <FaChevronDown
-                      aria-hidden="true"
-                      className="-mr-1 text-gray-400 size-5"
-                    />
-                  </MenuButton>
-                </div>
-
-                <MenuItems
-                  transition
-                  className="right-0 z-10 absolute focus:outline-hidden bg-white data-closed:opacity-0 shadow-lg mt-2 rounded-md ring-1 ring-black/5 w-56 data-closed:transform origin-top-right transition data-enter:duration-100 data-leave:duration-75 data-closed:scale-95 data-enter:ease-out data-leave:ease-in"
-                >
-                  <div className="py-1">
-                    <MenuItem>
-                      <a
-                        href="#"
-                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
-                      >
-                        Account settings
-                      </a>
-                    </MenuItem>
-                    <MenuItem>
-                      <a
-                        href="#"
-                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
-                      >
-                        Support
-                      </a>
-                    </MenuItem>
-                    <MenuItem>
-                      <a
-                        href="#"
-                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
-                      >
-                        License
-                      </a>
-                    </MenuItem>
-                    <form action="#" method="POST">
-                      <MenuItem>
-                        <button
-                          type="submit"
-                          className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 w-full text-gray-700 text-left text-sm data-focus:text-gray-900"
-                        >
-                          Sign out
-                        </button>
-                      </MenuItem>
-                    </form>
-                  </div>
-                </MenuItems>
-              </Menu>
             </div>
           </div>
 
