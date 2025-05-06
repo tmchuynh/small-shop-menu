@@ -29,6 +29,8 @@
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-tertiary: var(--tertiary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
@@ -51,23 +53,25 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.36 0.0769 240.93);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.52 0.0759 186.8);
   --secondary-foreground: oklch(0.205 0 0);
+  --tertiary: oklch(0.89 0.0616 80.58);
+  --tertiary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: oklch(0.71 0.1882 45.37);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.53 0.2119 27.63);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-1: oklch(0.69 0.106 167.64);
+  --chart-2: oklch(0.69 0.0923 47.64);
+  --chart-3: oklch(0.89 0.0137 314.75);
+  --chart-4: oklch(0.63 0.0483 210.35);
+  --chart-5: oklch(0.8 0.0382 105.55);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -85,23 +89,25 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.43 0.0922 240.54);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.55 0.0745 188.1);
   --secondary-foreground: oklch(0.985 0 0);
+  --tertiary: oklch(0.95 0.025 81.13);
+  --tertiary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.78 0.1448 49.61);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --destructive: oklch(0.58 0.2291 27.98);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --chart-1: oklch(0.9 0.0425 172.04);
+  --chart-2: oklch(0.91 0.0617 101.47);
+  --chart-3: oklch(0.8 0.0907 238);
+  --chart-4: oklch(0.42 0.1371 359.06);
+  --chart-5: oklch(0.66 0.1741 247.88);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -112,11 +118,67 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
+@font-face {
+  font-family: "AlegreyaSansSC";
+  src: url("/fonts/AlegreyaSansSC-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mitr";
+  src: url("/fonts/Mitr-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MuktaMalar";
+  src: url("/fonts/MuktaMalar-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 500 700 900;
+  font-style: normal;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-[MuktaMalar];
+  }
+
+  h1 {
+    @apply font-[Mitr] my-6 font-bold text-4xl md:text-5xl 2xl:text-7xl tracking-tight;
+  }
+
+  h2 {
+    @apply font-[MuktaMalar] font-extrabold mt-4 text-3xl md:text-4xl 2xl:text-5xl text-balance tracking-tight text-primary;
+  }
+
+  h3 {
+    @apply font-[AlegreyaSansSC] mt-2 font-semibold text-xl lg:text-2xl tracking-wide;
+  }
+
+  h4 {
+    @apply font-[Oswald] font-semibold text-sm lg:text-lg 2xl:text-xl tracking-tighter;
+  }
+
+  h5 {
+    @apply font-[AlegreyaSansSC] text-secondary font-semibold text-xs xl:text-sm  tracking-widest uppercase;
+  }
+
+  blockquote {
+    @apply border-l-2 border-secondary font-[MuktaMalar] pl-4 italic;
+  }
+  p {
+    @apply leading-7 text-pretty mt-2;
   }
 }
