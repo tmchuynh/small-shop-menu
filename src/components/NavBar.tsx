@@ -1,144 +1,156 @@
 "use client";
 
-import Link from "next/link";
-import * as React from "react";
-
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { FaBars, FaChevronDown } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+export default function NavBar() {
+  const pathname = usePathname();
 
-export function NavBar() {
+  const navigation = [
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Team", href: "/team" },
+    { name: "Projects", href: "/projects" },
+    { name: "Calendar", href: "/calendar" },
+  ];
+
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+
   return (
-    <NavigationMenu className="top-0 z-10 sticky flex justify-center bg-background/85 mx-auto py-6 min-w-screen">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
-            Getting started
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="gap-3 grid lg:grid-cols-[.75fr_1fr] p-4 md:w-[400px] lg:w-[500px]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="flex flex-col justify-end focus:shadow-md p-6 rounded-md w-full h-full no-underline select-none outline-none"
-                    href="/"
-                  >
-                    <div className="mt-4 mb-2 font-medium text-lg">
-                      shadcn/ui
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="gap-3 grid md:grid-cols-2 p-4 w-[400px] md:w-[500px] lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+    <Disclosure
+      as="nav"
+      className="bg-background shadow-sm font-[AlegreyaSansSC]"
+    >
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <div className="flex items-center shrink-0">
+              <Image
+                alt="Your Company"
+                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                className="w-auto h-8"
+                width={32}
+                height={32}
+              />
+            </div>
+            <div className="sm:flex items-center sm:space-x-8 hidden sm:ml-6">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 font-medium text-sm ${
+                    isActive(item.href)
+                      ? "border-indigo-500 text-gray-900"
+                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  }`}
                 >
-                  {component.description}
-                </ListItem>
+                  {item.name}
+                </a>
               ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+              <Menu as="a" className="inline-block relative text-left">
+                <div>
+                  <MenuButton className="inline-flex items-center gap-2 px-1 pt-1 hover:border-gray-300 border-transparent border-b-2 font-medium text-gray-500 text-sm hover:text-gray-700">
+                    Options
+                    <FaChevronDown
+                      aria-hidden="true"
+                      className="-mr-1 text-gray-400 size-5"
+                    />
+                  </MenuButton>
+                </div>
+
+                <MenuItems
+                  transition
+                  className="right-0 z-10 absolute focus:outline-hidden bg-white data-closed:opacity-0 shadow-lg mt-2 rounded-md ring-1 ring-black/5 w-56 data-closed:transform origin-top-right transition data-enter:duration-100 data-leave:duration-75 data-closed:scale-95 data-enter:ease-out data-leave:ease-in"
+                >
+                  <div className="py-1">
+                    <MenuItem>
+                      <a
+                        href="#"
+                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
+                      >
+                        Account settings
+                      </a>
+                    </MenuItem>
+                    <MenuItem>
+                      <a
+                        href="#"
+                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
+                      >
+                        Support
+                      </a>
+                    </MenuItem>
+                    <MenuItem>
+                      <a
+                        href="#"
+                        className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 text-gray-700 text-sm data-focus:text-gray-900"
+                      >
+                        License
+                      </a>
+                    </MenuItem>
+                    <form action="#" method="POST">
+                      <MenuItem>
+                        <button
+                          type="submit"
+                          className="block data-focus:outline-hidden data-focus:bg-gray-100 px-4 py-2 w-full text-gray-700 text-left text-sm data-focus:text-gray-900"
+                        >
+                          Sign out
+                        </button>
+                      </MenuItem>
+                    </form>
+                  </div>
+                </MenuItems>
+              </Menu>
+            </div>
+          </div>
+
+          <div className="flex items-center sm:hidden -mr-2">
+            {/* Mobile menu button */}
+            <DisclosureButton className="group inline-flex relative justify-center items-center focus:outline-hidden hover:bg-gray-100 p-2 rounded-md focus:ring-2 focus:ring-indigo-500 focus:ring-inset text-gray-400 hover:text-gray-500">
+              <span className="absolute -inset-0.5" />
+              <span className="sr-only">Open main menu</span>
+              <FaBars
+                aria-hidden="true"
+                className="block group-data-open:hidden size-6"
+              />
+              <IoMdClose
+                aria-hidden="true"
+                className="group-data-open:block hidden size-6"
+              />
+            </DisclosureButton>
+          </div>
+        </div>
+      </div>
+
+      <DisclosurePanel className="sm:hidden">
+        <div className="space-y-1 pt-2 pb-3">
+          {navigation.map((item) => (
+            <DisclosureButton
+              key={item.name}
+              as="a"
+              href={item.href}
+              className={`block py-2 pr-4 pl-3 border-l-4 font-medium text-base ${
+                isActive(item.href)
+                  ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                  : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+              }`}
+            >
+              {item.name}
+            </DisclosureButton>
+          ))}
+        </div>
+      </DisclosurePanel>
+    </Disclosure>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li className={cn("mx-0", className)}>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className="group flex flex-col data-[state=open]:bg-accent hover:bg-primary/85 p-4 rounded-md focus-visible:ring-[3px] focus-visible:ring-ring/50 h-full data-[state=open]:text-accent-foreground hover:text-primary-foreground no-underline transition-colors select-none outline-none focus-visible:outline-none"
-          {...props}
-        >
-          <div className="font-[PlayfairDisplay] font-medium text-lg leading-none">
-            {title}
-          </div>
-          <p className="font-[MavenPro] font-normal text-lg group-hover:text-white leading-snug">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
