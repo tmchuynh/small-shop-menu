@@ -7,8 +7,8 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { Skeleton } from "@/components/ui/skeleton";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 import { useCallback, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -34,7 +34,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <section className="relative">
-        <Skeleton className="w-full h-[40em]" />
+        <Image
+          src={
+            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+          alt="Restaurant"
+          width={1920}
+          height={1080}
+          className="w-full h-[40em] object-cover object-center"
+        />
         <div className="top-[25%] left-[5%] absolute">
           <div className="flex justify-center items-center max-w-4xl">
             <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl">
