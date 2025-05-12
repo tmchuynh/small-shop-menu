@@ -118,92 +118,74 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-
 @font-face {
-  font-family: "AlegreyaSansSC";
-  src: url("/fonts/AlegreyaSansSC-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mitr";
-  src: url("/fonts/Mitr-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MuktaMalar";
-  src: url("/fonts/MuktaMalar-Regular.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Oswald";
-  src: url("/fonts/Oswald-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300 500 700 900;
-  font-style: normal;
-}
-
-/* ============================ */
-
-@font-face {
-  font-family: "Antonio";
-  src: url("/fonts/Antonio-VariableFont_wght.ttf") format("truetype");
+  font-family: "BarlowCondensed";
+  src: url("/fonts/BarlowCondensed-ExtraLight.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MitrL";
-  src: url("/fonts/Mitr-ExtraLight.ttf") format("truetype");
+  font-family: "Calligraffitti";
+  src: url("/fonts/Calligraffitti-Regular.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MuktaMalarL";
-  src: url("/fonts/MuktaMalar-ExtraLight.ttf") format("truetype");
+  font-family: "JustMeAgainDownHere";
+  src: url("/fonts/JustMeAgainDownHere-Regular.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Raleway";
-  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-family: "LovedbytheKing";
+  src: url("/fonts/LovedbytheKing-Regular.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Caveat";
+  src: url("/fonts/Caveat-Bold.ttf") format("truetype");
+  font-weight: 300 500 700 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GrapeNuts";
+  src: url("/fonts/GrapeNuts-Regular.ttf") format("truetype");
+  font-weight: 300 500 700 900;
+  font-style: normal;
+}
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-[MuktaMalar];
+    @apply bg-background text-foreground font-[BarlowCondensed];
   }
 
   h1 {
-    @apply font-[Raleway] my-6 font-extrabold text-4xl md:text-5xl 2xl:text-7xl tracking-tight;
+    @apply font-[Caveat] uppercase my-6 font-extrabold text-3xl md:text-4xl 2xl:text-5xl tracking-tight;
   }
 
   h2 {
-    @apply font-[Oswald] font-bold mt-4 text-3xl md:text-4xl 2xl:text-5xl text-balance tracking-tighter text-accent;
+    @apply font-[JustMeAgainDownHere] font-bold mt-4 text-xl md:text-3xl -mb-2 2xl:text-4xl text-balance text-accent;
   }
 
   h3 {
-    @apply font-[Antonio] mt-2 font-semibold text-xl lg:text-2xl tracking-wide -mb-2;
+    @apply font-[Caveat] mt-2 font-semibold text-xl lg:text-3xl tracking-tight -mb-2;
   }
 
   h4 {
-    @apply font-[AlegreyaSansSC] text-sm lg:text-lg 2xl:text-xl mt-4 -mb-2;
+    @apply font-[GrapeNuts] text-sm lg:text-lg 2xl:text-xl mt-4 -mb-2;
   }
 
   h5 {
-    @apply font-[MitrL] text-accent font-semibold text-xs xl:text-sm mt-3 -mb-2 tracking-widest uppercase;
+    @apply font-[LovedbytheKing] text-accent font-semibold text-xs xl:text-sm mt-3 -mb-2 tracking-widest uppercase;
   }
 
   blockquote {
