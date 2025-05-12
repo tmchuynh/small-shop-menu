@@ -18,12 +18,10 @@ export default function BackdropButton({
     | "secondary"
     | "accent"
     | "tertiary"
-    | "fancy"
     | "destructive"
     | "ghost"
     | "link"
-    | "icon"
-    | "disabled";
+    | "icon";
   target?: string;
   size?: "default" | "sm" | "lg";
   rel?: string;
