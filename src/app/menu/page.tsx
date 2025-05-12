@@ -1,12 +1,31 @@
+import MenuSection from "@/components/menu/MenuSection";
+import { drinkMenu } from "@/lib/constants/menu/drinkMenu";
+import { foodMenu } from "@/lib/constants/menu/foodMenu";
+
 export default function MenuPage() {
   return (
     <div>
-      <div className="relative px-6 lg:px-8 max-w-7xl">
-        <div>
-          <h2 className="font-semibold text-gray-900 text-lg leading-8">
-            Menu
-          </h2>
-        </div>
+      <div className="relative mx-auto w-11/12">
+        <h1>Menu</h1>
+
+        <section>
+          <div>
+            <div className="gap-4 grid">
+              {foodMenu.map((category) => (
+                <MenuSection
+                  key={category.name}
+                  category={category}
+                  opt={true}
+                />
+              ))}
+            </div>
+            <div className="gap-4 grid">
+              {drinkMenu.map((category) => (
+                <MenuSection key={category.name} category={category} />
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
