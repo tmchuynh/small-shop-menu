@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navigation/NavBar";
 import DynamicBreadcrumb from "@/components/navigation/dynamic-breadcrumb";
 import { Providers } from "@/context/providers";
 import "./globals.css";
