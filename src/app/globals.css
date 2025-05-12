@@ -173,11 +173,11 @@
   }
 
   h2 {
-    @apply font-[JustMeAgainDownHere] font-bold mt-4 text-xl md:text-3xl -mb-2 2xl:text-4xl text-balance text-accent;
+    @apply font-[JustMeAgainDownHere] font-bold mt-4 text-xl md:text-3xl 2xl:text-4xl text-balance text-accent;
   }
 
   h3 {
-    @apply font-[Caveat] mt-2 font-semibold text-xl lg:text-3xl tracking-tight -mb-2;
+    @apply font-[Caveat] mt-2 font-semibold text-xl lg:text-2xl tracking-tight;
   }
 
   h4 {
