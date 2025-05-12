@@ -17,8 +17,6 @@ export default function NavBar() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "/menu" },
-    { name: "Reservations", href: "/reservations" },
-    { name: "Private Events", href: "/reservations/private-dining" },
     { name: "Gallery", href: "/gallery" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
@@ -31,7 +29,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-background md:py-2 xl:py-5 font-[AlegreyaSansSC]"
+      className="bg-background md:py-2 xl:py-5 font-[BarlowCondensed] text-4xl uppercase"
     >
       <div className="mx-auto w-11/12">
         <div className="flex justify-between h-16">
