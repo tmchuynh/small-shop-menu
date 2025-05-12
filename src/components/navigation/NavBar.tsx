@@ -9,6 +9,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { ThemeToggle } from "../button/ThemeToggle";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -30,7 +31,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-background shadow-sm font-[AlegreyaSansSC]"
+      className="bg-background md:py-2 xl:py-5 font-[AlegreyaSansSC]"
     >
       <div className="mx-auto w-11/12">
         <div className="flex justify-between h-16">
@@ -51,8 +52,8 @@ export default function NavBar() {
                   href={item.href}
                   className={`inline-flex items-center px-1 pt-1 border-b-2 font-medium text-sm ${
                     isActive(item.href)
-                      ? "border-indigo-500 text-gray-900"
-                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      ? "border-indigo-500"
+                      : "border-transparent hover:border-gray-300"
                   }`}
                 >
                   {item.name}
@@ -76,6 +77,7 @@ export default function NavBar() {
               />
             </DisclosureButton>
           </div>
+          <ThemeToggle />
         </div>
       </div>
 
