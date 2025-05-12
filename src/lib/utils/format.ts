@@ -18,15 +18,25 @@ export const formatDate = (dateString: string): string => {
 };
 
 /**
- * Formats a number as a currency string.
+ * Formats a number as a currency string with exactly two decimal places.
  *
  * @param value - The numeric value to format.
- * @returns A string representing the formatted currency value.
+ * @returns A string representing the formatted currency value with two decimal places.
  *          If the input is not a number, it returns "$0.00".
  */
 export const formatCurrency = (value: number) => {
   if (isNaN(value)) return "$0.00";
-  return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
+
+  // Format with fixed 2 decimal places first
+  const fixedValue = parseFloat(value.toFixed(2));
+
+  // Then apply locale formatting for currency
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(fixedValue);
 };
 
 /**
