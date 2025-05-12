@@ -7,13 +7,13 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function HomePage() {
-  const carouselOptions = { loop: true };
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const [api, setApi] = useState<CarouselApi>();
 
@@ -43,19 +43,20 @@ export default function HomePage() {
           height={1080}
           className="w-full h-[40em] object-cover object-center"
         />
-        <div className="top-[25%] left-[5%] absolute">
-          <div className="flex justify-center items-center max-w-4xl">
-            <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl">
-              Welcome to Our Restaurant
-            </h1>
-          </div>
-        </div>
       </section>
       <div className="relative mx-auto px-4 pt-24 pb-16 max-w-7xl">
         <section>
           <Carousel
             setApi={setApi}
-            opts={carouselOptions}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 9000,
+              }),
+            ]}
             className="mx-auto w-10/12 md:w-11/12 lg:w-full"
           >
             <CarouselContent className="-ml-1">
@@ -98,72 +99,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-      <h1>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. H1
-      </h1>{" "}
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <h2>
-        Sint irure culpa esse aliqua esse sunt culpa elit aliqua tempor in minim
-        aute. H2
-      </h2>{" "}
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <h3>
-        Dolor exercitation pariatur labore proident duis incididunt esse. H3
-      </h3>{" "}
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <h4>
-        Occaecat dolor mollit consequat tempor enim exercitation aliquip
-        officia. H4
-      </h4>{" "}
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <h5>qweqwId sit in amet sunt non veniam deserunt. H5</h5>
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <h6>Aliqua laboris excepteur enim incididunt.</h6>
-      <p>
-        Excepteur ex Lorem et officia reprehenderit pariatur officia cupidatat
-        aute non. Sint irure culpa esse aliqua esse sunt culpa elit aliqua
-        tempor in minim aute. Dolor exercitation pariatur labore proident duis
-        incididunt esse. Occaecat dolor mollit consequat tempor enim
-        exercitation aliquip officia. Id sit in amet sunt non veniam deserunt.
-        Aliqua laboris excepteur enim incididunt.
-      </p>
-      <div className="h-[30rem]"></div>
     </div>
   );
 }
