@@ -166,11 +166,11 @@
   }
 
   h2 {
-    @apply font-[Manrope] mt-4 text-xl font-extrabold md:text-xl 2xl:text-3xl text-balance text-accent;
+    @apply font-[Manrope] mt-4 text-xl font-extrabold md:text-xl 2xl:text-3xl text-balance text-primary;
   }
 
   h3 {
-    @apply font-[Manrope] mt-2 font-bold text-lg lg:text-xl tracking-tight;
+    @apply font-[Manrope] mt-2 font-bold text-lg lg:text-xl text-tertiary tracking-tight;
   }
 
   h4 {
