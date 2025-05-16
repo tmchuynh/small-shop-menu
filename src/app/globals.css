@@ -120,42 +120,35 @@
 
 @font-face {
   font-family: "BarlowCondensed";
-  src: url("/fonts/BarlowCondensed-ExtraLight.ttf") format("truetype");
+  src: url("/fonts/BarlowCondensed-Regular.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Calligraffitti";
-  src: url("/fonts/Calligraffitti-Regular.ttf") format("truetype");
+  font-family: "BarlowCondensed-Thin";
+  src: url("/fonts/BarlowCondensed-Thin.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "JustMeAgainDownHere";
-  src: url("/fonts/JustMeAgainDownHere-Regular.ttf") format("truetype");
+  font-family: "BeVietnamPro";
+  src: url("/fonts/BeVietnamPro-Black.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "LovedbytheKing";
-  src: url("/fonts/LovedbytheKing-Regular.ttf") format("truetype");
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Caveat";
-  src: url("/fonts/Caveat-Bold.ttf") format("truetype");
-  font-weight: 300 500 700 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GrapeNuts";
-  src: url("/fonts/GrapeNuts-Regular.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
   font-weight: 300 500 700 900;
   font-style: normal;
 }
@@ -165,31 +158,31 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-[BarlowCondensed];
+    @apply bg-background text-foreground font-[Roboto] text-sm;
   }
 
   h1 {
-    @apply font-[Caveat] uppercase my-6 font-extrabold text-3xl md:text-4xl 2xl:text-5xl tracking-tight;
+    @apply font-[BeVietnamPro] uppercase my-6 font-extrabold text-3xl md:text-4xl 2xl:text-5xl tracking-tight;
   }
 
   h2 {
-    @apply font-[JustMeAgainDownHere] font-bold mt-4 text-xl md:text-3xl 2xl:text-4xl text-balance text-accent;
+    @apply font-[Manrope] mt-4 text-xl font-extrabold md:text-xl 2xl:text-3xl text-balance text-accent;
   }
 
   h3 {
-    @apply font-[Caveat] mt-2 font-semibold text-xl lg:text-2xl tracking-tight;
+    @apply font-[Manrope] mt-2 font-bold text-lg lg:text-xl tracking-tight;
   }
 
   h4 {
-    @apply font-[GrapeNuts] text-sm lg:text-lg 2xl:text-xl mt-4 -mb-2;
+    @apply font-[BarlowCondensed-Thin] text-sm lg:text-lg mt-4 -mb-2;
   }
 
   h5 {
-    @apply font-[LovedbytheKing] text-accent font-semibold text-xs xl:text-sm mt-3 -mb-2 tracking-widest uppercase;
+    @apply font-[Manrope] text-accent font-thin text-xs xl:text-sm mt-3 -mb-2 tracking-widest uppercase;
   }
 
   blockquote {
-    @apply border-l-2 border-secondary font-[MuktaMalar] pl-4 italic;
+    @apply border-l-2 border-secondary font-[BarlowCondensed-Thin] pl-4 italic;
   }
   p {
     @apply leading-7 text-pretty mt-2;
