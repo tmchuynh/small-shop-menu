@@ -1,17 +1,12 @@
 export interface MenuItemInfo {
   name: string;
   description: string;
+  image: string;
   price: number;
-  imageUrl: string;
-  category: string;
-  isNew: boolean;
-  isPopular: boolean;
-  isVegetarian: boolean;
-  isVegan: boolean;
-  isDairyFree: boolean;
 }
 
 export interface MenuCategory {
   name: string;
+  description: string;
   items: MenuItemInfo[];
 }
