@@ -1,3 +1,4 @@
+import Footer from "@/components/navigation/Footer";
 import NavBar from "@/components/navigation/NavBar";
 import DynamicBreadcrumb from "@/components/navigation/dynamic-breadcrumb";
 import { Providers } from "@/context/providers";
@@ -16,6 +17,7 @@ export default function RootLayout({
             <NavBar />
             <DynamicBreadcrumb />
             {children}
+            <Footer />
           </main>
         </Providers>
       </body>
