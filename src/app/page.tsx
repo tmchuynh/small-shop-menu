@@ -1,5 +1,4 @@
 "use client";
-import { TabbedImages } from "@/components/images/TabbedImages";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -8,7 +7,6 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { tabbedImages } from "@/lib/constants/images/gallery";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
@@ -96,10 +94,6 @@ export default function HomePage() {
             <FaChevronRight />
           </Button>
         </div>
-      </section>
-
-      <section className="mx-auto w-11/12">
-        <TabbedImages data={tabbedImages} />
       </section>
     </div>
   );
