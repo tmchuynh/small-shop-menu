@@ -6,20 +6,37 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Formats a number as a currency string.
- *
- * @param value - The numeric value to format.
- * @returns A string representing the formatted currency value.
- *          If the input is not a number, it returns "$0.00".
+ * Formats a numeric value as US currency with dollar sign and 2 decimal places.
+ * 
+ * @param value - The numeric value to format as currency
+ * @returns A string representing the value formatted as US currency (e.g., "$123.45")
+ * or "$0.00" if the input is not a valid number
  */
-export const formatCurrency = (value: number) => {
-  if (isNaN(value)) return "$0.00";
+export const formatCurrency = (value: unknown) => {
+  if (typeof value !== "number" || isNaN(value)) return "$0.00";
 
-  return "$" + value.toLocaleString(undefined);
+  const usFormat = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(value);
+
+  return usFormat;
 };
 
+/**
+ * Capitalizes the first letter of each word in a string and replaces hyphens and underscores with spaces.
+ * 
+ * @param str - The input string to be capitalized
+ * @returns A new string with the first letter of each word capitalized and all hyphens/underscores replaced with spaces
+ * 
+ * @example
+ * capitalize("hello-world") // Returns "Hello World"
+ * capitalize("user_name") // Returns "User Name"
+ */
 export const capitalize = (str: string) => {
-  return str.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+  return str
+    .replaceAll(/[-_]/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
 };
 
 /**
