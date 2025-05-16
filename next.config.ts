@@ -9,6 +9,7 @@ const imageHosts = [
   "www.freepik.com",
   "cdn.pixabay.com",
   "example.com",
+  "www.canva.com",
 ];
 
 const nextConfig: NextConfig = {
