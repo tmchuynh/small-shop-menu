@@ -10,7 +10,7 @@ export default function MenuItem({ item }: { item: MenuItemInfo }) {
         alt={item.name}
         width={900}
         height={900}
-        className="md:block hidden border rounded-2xl w-24 2xl:w-32 h-24 2xl:h-32 object-cover object-center aspect-square"
+        className="md:block hidden border rounded-2xl w-24 2xl:w-32 h-24 2xl:h-32 object-cover object-center aspect-4/6"
       />
       <div className="flex justify-between w-full">
         <div className="flex flex-col">
