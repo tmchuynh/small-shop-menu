@@ -17,7 +17,6 @@ export default function NavBar() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "/menu" },
-    { name: "Gallery", href: "/gallery" },
     { name: "About Us", href: "/about-us" },
     { name: "Contact Us", href: "/contact-us" },
   ];
@@ -37,7 +36,7 @@ export default function NavBar() {
             <div className="flex items-center shrink-0">
               <Image
                 alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                src="/images/cappuccino.png"
                 className="w-auto h-8"
                 width={32}
                 height={32}
