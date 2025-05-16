@@ -42,6 +42,13 @@ export const drinkMenu: MenuCategory[] = [
         price: 5.0,
       },
       {
+        name: "Spiced Cider",
+        description: "Warm spiced apple cider with cinnamon.",
+        price: 3.49,
+        image:
+          "https://media.istockphoto.com/id/1039606974/photo/black-tea-in-a-glass-cup.jpg?s=612x612&w=0&k=20&c=tawVc_-f_FcVHGh6cH-BpIdrmqEhWhmOFz5uskDHumE=",
+      },
+      {
         name: "Cinnamon Roll Mocha",
         description: "A sweet latte with cinnamon roll flavor.",
         image:

@@ -2,23 +2,57 @@ import { MenuCategory } from "@/lib/interfaces";
 
 export const foodMenu: MenuCategory[] = [
   {
+    name: "Seasonal Items",
+    description: "Special seasonal items to warm your heart.",
+    items: [
+      {
+        name: "Pecan Pie",
+        description: "Classic pecan pie with a flaky crust.",
+        price: 4.99,
+        image:
+          "https://media.istockphoto.com/id/2164665781/photo/one-slice-piece-of-pecan-pie-with-whipped-cream.jpg?s=612x612&w=0&k=20&c=JUeuHn7IceyD26Z8qM6ZgXN7UCVAXlBSjC61RxEdTDY=",
+      },
+      {
+        name: "Apple Pie",
+        description: "Homemade apple pie with a flaky crust.",
+        price: 3.99,
+        image:
+          "https://media.istockphoto.com/id/171111884/photo/apple-pie.jpg?s=612x612&w=0&k=20&c=PP1KrillNYZT_4zIHHaySEW2QQLIeb3Sf_mvciioMiY=",
+      },
+      {
+        name: "Gingerbread Cookies",
+        description: "Spiced gingerbread cookies with icing.",
+        price: 2.49,
+        image:
+          "https://media.istockphoto.com/id/1284622401/photo/christmas-cookies-on-plate-top-view.jpg?s=612x612&w=0&k=20&c=rJK8cg8etjDrqEN9BOQhsWmd6sDv5SAksht-cl-AVfs=",
+      },
+      {
+        name: "Apple Crisp",
+        description: "Warm apple crisp with vanilla ice cream.",
+        price: 5.99,
+        image:
+          "https://media.istockphoto.com/id/1449381641/photo/sweet-crumble-with-truffle-strawberry-blueberry-and-ice-cream.jpg?s=612x612&w=0&k=20&c=Oau1MCCm63vKEZyieGWP3rCyjo3_wJ-AuW0OplLBdFk=",
+      },
+      {
+        name: "Cider Doughnuts",
+        description: "Warm doughnuts coated in cinnamon sugar.",
+        price: 3.49,
+        image:
+          "https://media.istockphoto.com/id/1818662857/photo/apple-cider-donuts.jpg?s=612x612&w=0&k=20&c=P1mb3vGVTodA2C4j0DAWPH6N_Pk34u4iy41T-9v-6RE=",
+      },
+      {
+        name: "Pumpkin Spice Popcorn",
+        description: "Popcorn drizzled with pumpkin spice caramel.",
+        price: 3.99,
+        image:
+          "https://media.istockphoto.com/id/531138503/photo/popcorn.jpg?s=612x612&w=0&k=20&c=_E_BY72mgkn885pXkCWMwHgWSvEc4U6BEY6jxcf-rp0=",
+      },
+    ],
+  },
+  {
     name: "Breakfast",
     description: "Breakfast items to start your day right with a smile.",
     items: [
-      {
-        name: "Pancakes",
-        description: "Fluffy pancakes served with syrup.",
-        price: 5.99,
-        image:
-          "https://media.istockphoto.com/id/1917302932/photo/breakfast-table.jpg?s=612x612&w=0&k=20&c=odpY5u2N7p9Vy-pbU6cHfJ83DRddIbU9n8OcRRbDBVE=",
-      },
-      {
-        name: "Omelette",
-        description: "Three-egg omelette with your choice of fillings.",
-        price: 6.49,
-        image:
-          "https://media.istockphoto.com/id/1829058305/photo/corned-brisket-beef-hash-omelette.jpg?s=612x612&w=0&k=20&c=TC1qWOtcrZP2O8gTjfo0EueM0RGcWQbVpKr3Ys9vKvA=",
-      },
       {
         name: "French Toast",
         description: "Thick slices of bread dipped in egg and grilled.",
@@ -89,25 +123,11 @@ export const foodMenu: MenuCategory[] = [
           "https://media.istockphoto.com/id/930271208/photo/healthy-grilled-basil-mozzarella-caprese-panini.jpg?s=612x612&w=0&k=20&c=6B176_LanoK6okEUU_MCfD49L1W5_dhbFijiJx3FzrM=",
       },
       {
-        name: "Pulled Pork",
-        description: "Slow-cooked pulled pork with BBQ sauce.",
-        price: 8.99,
-        image:
-          "https://media.istockphoto.com/id/1215529349/photo/braised-beef-short-rib-sandwich-with-coleslaw-on-a-brioche-bun.jpg?s=612x612&w=0&k=20&c=Z5Ghbqla2Le2LLFZEuEN9js3bkdv-DHS6G_3K_NF6ZI=",
-      },
-      {
         name: "Veggie Wrap",
         description: "Fresh vegetables wrapped in a tortilla.",
         price: 5.99,
         image:
           "https://media.istockphoto.com/id/499742048/photo/fresh-tortilla-wraps-with-chicken-and-fresh-vegetables-on-plate.jpg?s=612x612&w=0&k=20&c=e4Oyh4otvDp0ChkJGfaourkGSTZ6eohiv9ER-xdOzJo=",
-      },
-      {
-        name: "Philly Cheesesteak",
-        description: "Thinly sliced beef with melted cheese and peppers.",
-        price: 9.49,
-        image:
-          "https://media.istockphoto.com/id/2176117365/photo/cheesesteak-with-french-fries.jpg?s=612x612&w=0&k=20&c=EONcHnRhZIErOQRRpdkiGeb9fS4TKZHNChxaaCGL4JM=",
       },
       {
         name: "Chicken Caesar Wrap",
@@ -173,6 +193,20 @@ export const foodMenu: MenuCategory[] = [
           "https://media.istockphoto.com/id/1185259136/photo/cherry-danish.jpg?s=612x612&w=0&k=20&c=XB71gt4F-Hd-REwsUkElAzmS5ccNgo8fvd0SqTzx5Dk=",
       },
       {
+        name: "Pretzels",
+        description: "Soft pretzels served with mustard.",
+        price: 3.49,
+        image:
+          "https://media.istockphoto.com/id/2161870339/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=MOHHambzxroPbOHRFjuHbBWwewu9YQe1kXGCQn5Pl4k=",
+      },
+      {
+        name: "Chocolate-Covered Pretzels",
+        description: "Salty pretzels dipped in chocolate.",
+        price: 2.99,
+        image:
+          "https://media.istockphoto.com/id/1978764573/photo/chocolate-dipped-pretzel-rods-on-a-plate.jpg?s=612x612&w=0&k=20&c=IBGvNzoIdKzRO_LNu4ZgwP0sx08fmIGOwpUGHof5OG8=",
+      },
+      {
         name: "Scone",
         description: "Buttery scone with fruit or nuts.",
         price: 2.49,
@@ -182,131 +216,7 @@ export const foodMenu: MenuCategory[] = [
     ],
   },
   {
-    name: "Soups",
-    description: "Warm and comforting soups to start your meal right.",
-    items: [
-      {
-        name: "Tomato Basil Soup",
-        description: "A classic tomato soup with fresh basil.",
-        price: 5.99,
-        image:
-          "https://media.istockphoto.com/id/1201090615/photo/tomato-soup-with-basil-in-a-bowl.jpg?s=612x612&w=0&k=20&c=ao270D5Ig8FYoEywoiDN0vwYFffyCB8Oh653DDTidcE=",
-      },
-      {
-        name: "Chicken Tortilla",
-        description: "Spicy chicken soup with tortilla strips.",
-        price: 6.99,
-        image:
-          "https://media.istockphoto.com/id/95854713/photo/mexican-tortilla-soup.jpg?s=612x612&w=0&k=20&c=jhhW4y4qHdSJLbu6sv9eWUhPAdWqS6vyVN6UCY6pEyk=",
-      },
-      {
-        name: "Clam Chowder",
-        description: "Creamy clam chowder with potatoes and bacon.",
-        price: 7.99,
-        image:
-          "https://media.istockphoto.com/id/1920455122/photo/chunky-new-england-clam-chowder.jpg?s=612x612&w=0&k=20&c=EP8GkUVqqcT3ZCoSekDLjHiysGnvKvTAcRrTQVXGZ60=",
-      },
-      {
-        name: "Loaded Potato",
-        description: "Creamy potato soup loaded with cheese and bacon.",
-        price: 6.49,
-        image:
-          "https://media.istockphoto.com/id/2183844667/photo/baked-potato-soup.jpg?s=612x612&w=0&k=20&c=EH2t2HPW0OueqGqyXIJtqdhvkeuJtiodSdPgB2uK4oQ=",
-      },
-      {
-        name: "Minestrone",
-        description: "Vegetable soup with pasta and beans.",
-        price: 5.49,
-        image:
-          "https://media.istockphoto.com/id/1985604497/photo/chick-pea-tomato-and-noodle-soup.jpg?s=612x612&w=0&k=20&c=5_aKs76jVL0nVWmeRQSREsLX0OL3Cg-cIb7EeYzzhgE=",
-      },
-      {
-        name: "French Onion",
-        description: "Caramelized onion soup topped with melted cheese.",
-        price: 7.49,
-        image:
-          "https://media.istockphoto.com/id/171101792/photo/french-onion-soup.jpg?s=612x612&w=0&k=20&c=oNxmTWBbPegf3C6daPGBT4HAwuinTE_zAimS--ipnPg=",
-      },
-      {
-        name: "Butternut Squash",
-        description: "Creamy butternut squash soup with spices.",
-        price: 6.99,
-        image:
-          "https://media.istockphoto.com/id/497813046/photo/homemade-hot-butternut-squash-soup.jpg?s=612x612&w=0&k=20&c=8ePBMHY9NIbHQUclGYTrJ6I45f2a7GIjWzFamE8pVhc=",
-      },
-      {
-        name: "Lentil Soup",
-        description: "Hearty lentil soup with vegetables and spices.",
-        price: 5.99,
-        image:
-          "https://media.istockphoto.com/id/1979470278/photo/fresh-vegetable-soup-with-lentil-on-wooden-table.jpg?s=612x612&w=0&k=20&c=kscJMpmWv-R9yMDXqpHjaYneb8Idtp2CV_RduX-DEio=",
-      },
-    ],
-  },
-  {
-    name: "Salads",
-    description: "Fresh salads made with seasonal ingredients and dressings.",
-    items: [
-      {
-        name: "Caesar Salad",
-        description: "Romaine lettuce with Caesar dressing and croutons.",
-        price: 6.99,
-        image:
-          "https://media.istockphoto.com/id/534139231/photo/healthy-grilled-chicken-caesar-salad.jpg?s=612x612&w=0&k=20&c=TR_sE5S5ChmjFywg3dh_J5V_ha-BcwgTU26BvsgbsjY=",
-      },
-      {
-        name: "Greek Salad",
-        description: "Mixed greens with feta cheese and olives.",
-        price: 7.49,
-        image:
-          "https://media.istockphoto.com/id/2200651088/photo/high-angle-view-of-greek-salad-bowl-on-dining-table-feta-cheese-black-olives-tomatoes-and.jpg?s=612x612&w=0&k=20&c=SZYXSSICsyLb_gE_Mm_wanv8orGcVK5P4Gyl6ViAb9g=",
-      },
-      {
-        name: "Cobb Salad",
-        description: "Mixed greens with chicken, bacon, and avocado.",
-        price: 8.99,
-        image:
-          "https://media.istockphoto.com/id/500119141/photo/healthy-hearty-cobb-salad.jpg?s=612x612&w=0&k=20&c=28Q_RKSRBvlrJD8XwINIc-vmMkQguq12o6QkWWscjA8=",
-      },
-      {
-        name: "Caprese Salad",
-        description: "Fresh mozzarella, tomatoes, and basil.",
-        price: 7.99,
-        image:
-          "https://media.istockphoto.com/id/1580781126/photo/tomato-and-mozzarella-salad.jpg?s=612x612&w=0&k=20&c=S27stjFZHZTUCUSTYQUH3E9s26457EyZ5ZkomKtHHoY=",
-      },
-      {
-        name: "Quinoa Salad",
-        description: "Quinoa with mixed vegetables and dressing.",
-        price: 6.49,
-        image:
-          "https://media.istockphoto.com/id/941131444/photo/healthy-vegan-quinoa-spinach-salad.jpg?s=612x612&w=0&k=20&c=JIlIDH6Ay-QQ6oR9EWZVJcA-n1c9UgL3Ycz_JXI59-o=",
-      },
-      {
-        name: "Spinach Salad",
-        description: "Spinach with strawberries and walnuts.",
-        price: 5.99,
-        image:
-          "https://media.istockphoto.com/id/1005741226/photo/spinach-salad-with-strawberries-goat-cheese-balsamic-and-walnuts.jpg?s=612x612&w=0&k=20&c=vef1WysXr5FRQrC52Fa_0FfsdP3skcLS6WfmROFQEqk=",
-      },
-      {
-        name: "Asian Chicken Salad",
-        description: "Grilled chicken with Asian dressing and veggies.",
-        price: 8.49,
-        image:
-          "https://media.istockphoto.com/id/539216217/photo/asian-duck-salad.jpg?s=612x612&w=0&k=20&c=181obZQgftytMKL-ILq_IE8bP-JvzslbCgL-YG5YwX8=",
-      },
-      {
-        name: "Taco Salad",
-        description: "Tortilla bowl filled with taco ingredients.",
-        price: 7.49,
-        image:
-          "https://media.istockphoto.com/id/171148425/photo/taco-salad.jpg?s=612x612&w=0&k=20&c=Q_E-VLUR6ike76OABD1jQCC10hr0wY6m5q6xpWrXQ1o=",
-      },
-    ],
-  },
-  {
-    name: "Snacks",
+    name: "Quick Snacks",
     description: "Light snacks to keep you energized throughout the day.",
     items: [
       {
@@ -322,13 +232,6 @@ export const foodMenu: MenuCategory[] = [
         price: 4.49,
         image:
           "https://media.istockphoto.com/id/1300836710/photo/crop-shot-of-plate-with-colorful-healthy-sliced-vegetables-and-dips.jpg?s=612x612&w=0&k=20&c=n78ffFNdqTX_DWQoQ7ghyjlfvLxZGOHuQUa_CDjLgRs=",
-      },
-      {
-        name: "Popcorn",
-        description: "Lightly salted popcorn.",
-        price: 2.99,
-        image:
-          "https://media.istockphoto.com/id/1789886496/photo/bowl-of-tasty-popcorn-on-wooden-table-space-for-text.jpg?s=612x612&w=0&k=20&c=wpNq5KtA8GgWObouKD2Ck4mcGT2pipmxVSntnrYUWNU=",
       },
       {
         name: "Nachos",
@@ -358,17 +261,10 @@ export const foodMenu: MenuCategory[] = [
         image:
           "https://media.istockphoto.com/id/2194878593/photo/close-up-of-a-glass-container-filled-with-organic-mix-of-nuts-and-seeds.jpg?s=612x612&w=0&k=20&c=VyO2X6SGyrgnot6fqby-lYvt-UvLNDC8eUy_Vb7dPTs=",
       },
-      {
-        name: "Pretzels",
-        description: "Soft pretzels served with mustard.",
-        price: 3.49,
-        image:
-          "https://media.istockphoto.com/id/2161870339/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=MOHHambzxroPbOHRFjuHbBWwewu9YQe1kXGCQn5Pl4k=",
-      },
     ],
   },
   {
-    name: "Treats",
+    name: "Lil' Sweet Treats",
     description:
       "Sweet treats to satisfy your cravings and indulge your senses.",
     items: [
@@ -378,6 +274,13 @@ export const foodMenu: MenuCategory[] = [
         price: 1.99,
         image:
           "https://media.istockphoto.com/id/932736954/photo/chocolate-bark-making.jpg?s=612x612&w=0&k=20&c=-CYYFwLnAsnPyL4G38p24FfOu6b2qO7BcVU6IQP32Tw=",
+      },
+      {
+        name: "Popcorn",
+        description: "Lightly salted popcorn.",
+        price: 2.99,
+        image:
+          "https://media.istockphoto.com/id/1789886496/photo/bowl-of-tasty-popcorn-on-wooden-table-space-for-text.jpg?s=612x612&w=0&k=20&c=wpNq5KtA8GgWObouKD2Ck4mcGT2pipmxVSntnrYUWNU=",
       },
       {
         name: "Gummy Bears",
@@ -400,13 +303,7 @@ export const foodMenu: MenuCategory[] = [
         image:
           "https://media.istockphoto.com/id/816012416/photo/homemade-bars-of-marshmallow-and-crispy-rice-and-ingredients-on-the-table-american-dessert.jpg?s=612x612&w=0&k=20&c=Yl0Ckvrr-fOGX7N3rNVr7uJlObnfH50UpjzL3xBKA7o=",
       },
-      {
-        name: "Chocolate-Covered Pretzels",
-        description: "Salty pretzels dipped in chocolate.",
-        price: 2.99,
-        image:
-          "https://media.istockphoto.com/id/1978764573/photo/chocolate-dipped-pretzel-rods-on-a-plate.jpg?s=612x612&w=0&k=20&c=IBGvNzoIdKzRO_LNu4ZgwP0sx08fmIGOwpUGHof5OG8=",
-      },
+
       {
         name: "Lollipops",
         description: "Assorted flavored lollipops.",
@@ -455,13 +352,6 @@ export const foodMenu: MenuCategory[] = [
         price: 4.99,
         image:
           "https://media.istockphoto.com/id/2030549106/photo/chocolate-lava-cake.jpg?s=612x612&w=0&k=20&c=3sI3EJI9kEJwy-fUsNm8EEeSvl96XH-GXxiUiC6kyWE=",
-      },
-      {
-        name: "Apple Pie",
-        description: "Homemade apple pie with a flaky crust.",
-        price: 3.99,
-        image:
-          "https://media.istockphoto.com/id/171111884/photo/apple-pie.jpg?s=612x612&w=0&k=20&c=PP1KrillNYZT_4zIHHaySEW2QQLIeb3Sf_mvciioMiY=",
       },
       {
         name: "Panna Cotta",
