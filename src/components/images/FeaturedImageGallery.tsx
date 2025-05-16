@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
-
 export function FeaturedImageGallery({
   data,
 }: {
@@ -16,6 +15,9 @@ export function FeaturedImageGallery({
       setLength(data.length - 1);
     }
   }, [data.length]);
+
+  console.log(length);
+  console.log("data.length", data.length);
 
   return (
     <div className="gap-4 grid">

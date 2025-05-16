@@ -1,10 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 
-export function GalleryWithTab({
+export function TabbedImages({
   data,
 }: {
-  data: { label: string; value: string; images: string[] }[];
+  data: { label: string; value: string; images: { imageLink: string }[] }[];
 }) {
   return (
     <Tabs value="html">
@@ -22,11 +22,11 @@ export function GalleryWithTab({
             className="gap-4 grid grid-cols-2 md:grid-cols-3"
             key={value}
           >
-            {images.map((src, index) => (
+            {images.map(({ imageLink }, index) => (
               <div key={index}>
                 <Image
                   className="rounded-lg w-full max-w-full h-40 object-cover object-center"
-                  src={src}
+                  src={imageLink}
                   alt="image-photo"
                   width={500}
                   height={500}
