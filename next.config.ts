@@ -6,6 +6,8 @@ const imageHosts = [
   "plus.unsplash.com",
   "img.freepik.com",
   "media.istockphoto.com",
+  "www.freepik.com",
+  "cdn.pixabay.com",
 ];
 
 const nextConfig: NextConfig = {
