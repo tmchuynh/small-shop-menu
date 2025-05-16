@@ -32,9 +32,9 @@ export default function MenuPage() {
               <DialogTrigger asChild className="z-10">
                 <Button variant="outline">View Menu</Button>
               </DialogTrigger>
-              <DialogContent className="md:max-w-[90rem] h-screen">
+              <DialogContent className="m-auto max-w-[90%] md:max-w-[95%] max-h-[90%]">
                 <DialogTitle className="sr-only">Food Menu</DialogTitle>
-                <ScrollArea className="mx-auto px-7 h-[90%]">
+                <ScrollArea className="mx-auto px-7 xl:w-full h-[16%] md:h-[29%] 2xl:h-[30%]">
                   <div className="gap-4 grid">
                     {foodMenu.map((category) => (
                       <MenuSection key={category.name} category={category} />
@@ -59,7 +59,7 @@ export default function MenuPage() {
               </DialogTrigger>
               <DialogContent className="m-auto max-w-[90%] md:max-w-[95%] max-h-[90%]">
                 <DialogTitle className="sr-only">Drinks Menu</DialogTitle>
-                <ScrollArea className="mx-auto px-7 xl:w-full h-[7.8%] md:h-[15.5%] lg:h-[15%] 2xl:h-[17%] xl:h-[15.4%]">
+                <ScrollArea className="mx-auto px-7 xl:w-full h-[16%] md:h-[29%] 2xl:h-[30%]">
                   <div className="gap-4 grid">
                     {drinkMenu.map((category) => (
                       <MenuSection key={category.name} category={category} />
