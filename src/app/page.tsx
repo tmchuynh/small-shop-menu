@@ -36,12 +36,12 @@ export default function HomePage() {
       <section className="relative">
         <Image
           src={
-            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            "https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_1280.jpg"
           }
           alt="Restaurant"
+          className="w-full h-[40em] object-center object-cover"
           width={1920}
           height={1080}
-          className="w-full h-[40em] object-cover object-center"
         />
       </section>
       <div className="relative mx-auto px-4 pt-24 pb-16 max-w-7xl">
